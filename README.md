@@ -1,4 +1,10 @@
-# Assignment 1 Structure
+## Other stuff to talk about
+
+- Report Contents
+- Professor said we need to recreate b\* table from slides:
+  ![alt text](figures/image.png)
+
+# Assignment 1 ProposedStructure
 
 This project implements the A\* algorithm for the n-puzzle (8/15/24).  
 Below is a brief overview of the main files and their roles.
@@ -42,8 +48,3 @@ Below is a brief overview of the main files and their roles.
 - **viz.py** (for visualization/animation of solutions).
 - **results/** (folder to store CSVs from experiments).
 
-## Other stuff to talk about
-
-- I think we need to make a report with our results as well
-- Professor said we need to recreate b\* table from slides:
-  ![alt text](figures/image.png)
