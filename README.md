@@ -1,15 +1,11 @@
-## Other stuff to talk about
-
-- Report Contents
-- Professor said we need to recreate b\* table from slides:
-  ![alt text](figures/image.png)
-
 # Assignment 1 ProposedStructure
 
 This project implements the A\* algorithm for the n-puzzle (8/15/24).  
 Below is a brief overview of the main files and their roles.
 
 ## Files
+- **Results/**
+  - Contains raw results and figures for Part 1, 2, and 3 of the assignment
 
 - **puzzle.py**
 
@@ -30,10 +26,6 @@ Below is a brief overview of the main files and their roles.
 
   - Computes derived metrics like the effective branching factor (b\*).
 
-- **experiment_logging.py**
-
-  - Handles saving experiment results to CSV (or Excel if needed).
-  - Each row should include: puzzle size, scramble depth, heuristic used, solution depth, nodes expanded, runtime, solved flag, and b\*.
 
 - **run_experiments.py**
 
@@ -41,10 +33,6 @@ Below is a brief overview of the main files and their roles.
   - Generates scrambled puzzles, runs A\* with different heuristics, and logs results.
 
 - **tests/**
-  - Unit tests for each component (puzzle, heuristics, search, metrics).
+  - Unit tests for components.
 
-## Optional
-
-- **viz.py** (for visualization/animation of solutions).
-- **results/** (folder to store CSVs from experiments).
 

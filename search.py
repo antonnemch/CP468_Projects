@@ -3,6 +3,7 @@ from heapq import heappush, heappop
 from itertools import count
 import time
 from dataclasses import dataclass
+from typing import Optional, List
 
 @dataclass
 class SearchResult:
@@ -10,7 +11,7 @@ class SearchResult:
     solution_depth: int
     nodes_expanded: int
     runtime: float
-    path: list = None
+    path: Optional[List] = None
 
 def astar(board, heuristic):
     # record start time
