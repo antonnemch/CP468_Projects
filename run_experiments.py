@@ -1,3 +1,36 @@
+"""Experiment driver and visualization utilities for the n-puzzle project.
+
+This module orchestrates experiments that run A* with multiple heuristics
+across different puzzle sizes, collects results, computes summaries, and
+produces CSVs and figures organized under a Results/PartX directory layout.
+
+Author
+------
+Anton Nemchinski
+
+API (at-a-glance)
+------------------
+- run_single_experiment(n, num_moves, seed, h_funcs) -> Dict[str, SearchResult]
+    Run A* on a single randomized instance for all heuristics provided.
+- run_multiple_experiments(n, num_moves, num_experiments, h_funcs)
+    Produce results for many instances; prints progress and returns a dict
+    mapping heuristic name -> list of SearchResult.
+- calculate_statistics(results) -> pd.DataFrame
+    Aggregate per-heuristic statistics (mean nodes, depth, runtime, b*, success_rate).
+- create_and_save_comparison_table(results, n, base_path) -> pd.DataFrame
+    Save a CSV comparing nodes expanded and branching factor per solution depth.
+- save_image_table_nodes_and_bf(results, n, base_path) -> pd.DataFrame
+    Produce the PNG table visual used in reports and a CSV summary.
+- save_comparison_graphs(results, n, base_path)
+    Save scatter and line plots (nodes vs depth, branching factor vs depth).
+- ensure_figures_directory(n) -> str
+    Create Results/PartX directories and return the path appropriate for n.
+- run_part_1/2/3()
+    Runners for 8-, 15-, and 24-puzzle experiments respectively. Each returns
+    the raw results dict for that part.
+
+"""
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt

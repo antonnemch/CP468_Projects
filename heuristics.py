@@ -1,4 +1,27 @@
-# heuristics.py; This contains the three heuristic functions ; misplaced tiles, Manhattan distance and linear conflict
+"""Heuristic functions for the n-puzzle.
+
+This module provides admissible heuristics used by the A* search driver:
+- h1_misplaced: number of misplaced tiles (ignore blank)
+- h2_manhattan: sum of Manhattan distances to goal positions
+- h3_linear_conflict: Manhattan + 2 * (linear conflict pairs)
+
+Author
+------
+Julian Rincon
+
+API (at-a-glance)
+------------------
+- _goal_pos_map(n) -> Dict[int, (row, col)]
+    Map tile value to its goal coordinates (excludes blank).
+- h1_misplaced(board: Board) -> int
+    Count of non-blank tiles not in goal position. O(n^2).
+- h2_manhattan(board: Board) -> int
+    Sum of Manhattan distances for all tiles. O(n^2).
+- h3_linear_conflict(board: Board) -> int
+    Manhattan plus linear conflict correction; admissible and
+    typically stronger than Manhattan. O(n^2) with a small constant.
+
+"""
 
 from __future__ import annotations
 from typing import Tuple, Dict

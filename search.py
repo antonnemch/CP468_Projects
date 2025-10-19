@@ -1,3 +1,29 @@
+"""A* search implementation and a simple SearchResult container.
+
+This module provides a straightforward A* implementation used by the
+experiment harness. It focuses on clarity and correctness rather than
+performance micro-optimizations. The A* implementation stores g-values,
+parents for path reconstruction, and uses a heap keyed by f = g + h.
+
+Authors
+-------
+Roop Bassi
+Jordan Franschman
+
+API (at-a-glance)
+------------------
+- dataclass SearchResult(solved, solution_depth, nodes_expanded, runtime, path)
+    Container returned by :func:`astar` describing the outcome.
+- astar(board, heuristic) -> SearchResult
+    Run A* from the given start board using the provided heuristic function
+    (callable taking a Board and returning an int). Returns a SearchResult.
+
+Note: This module includes a small demo that runs A* on a randomized 3x3
+board when executed as a script. Remove or guard demo code if embedding in
+larger systems.
+
+"""
+
 import heuristics, puzzle
 from heapq import heappush, heappop
 from itertools import count
